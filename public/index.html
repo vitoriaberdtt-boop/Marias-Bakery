@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria's Bakery</title>
+    <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-placeholder"></div>
+    <h1>🩷 Maria's Bakery 🩷</h1>
+    <div class="header-right">
+        <a href="#ocarrinho">
+            <img src="/assets/carrinho.png" alt="Carrinho de compras" id="carrinho">
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+<nav id="nav-menu">
+    <a href="#listras">Produtos</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#ocarrinho">Carrinho</a>
+</nav>
+
+    <section id="listras">
+        <h2>
+            <strong>
+                 Os melhores bolos da cidade! Peça já o seu:
+            </strong>
+        </h2>
+    </section>
+
+    <main>
+        <div id="search-div">
+            <img src="/assets/lupa.png" alt="Lupa" id="lupa">
+            <input type="text" id="search" placeholder="Pesquisar...">
+        </div>
+
+        <div id="product-list"></div>
+
+        <section id="sobre">
+            <h2>🩷 Sobre 🩷</h2>
+            <div id="sobre-content">
+                <img src="/assets/a.jpg" id="imga">
+                <p>
+                    Bem-vindo à Maria's Bakery, onde a paixão por doces e a arte da confeitaria se encontram para criar experiências deliciosas! Fundada por Maria, uma talentosa confeiteira com anos de experiência, nossa padaria é um refúgio para os amantes de doces que buscam sabores autênticos e qualidade excepcional. Aqui cada item é cuidadosamente preparado com ingredientes frescos e selecionados, garantindo que cada mordida seja uma explosão de sabor. Venha nos visitar e descubra o prazer de saborear nossas criações únicas!
+                </p>
+            </div>
+        </section>
+
+        <section id="ocarrinho">
+            <h2 id="h2carrinho">🩷 Carrinho 🩷</h2>
+
+            <fieldset id="carrito" style="display: none;">                
+                <div id="carrinho-lista"></div>
+            </fieldset>
+
+            <h3 id="carrinho-msg">Você não tem itens no carrinho.</h3>
+            <p id="carrinho-total">Total: R$ 0,00</p>
+        </section>
+
+        <script src="script.js"></script>
+
+    </main>
+    <footer>
+        <p>© 2026 | Vitória Berdtt<span id="carrinho-contador" style="font-size: 1px;">0</span></p>
+    </footer>
+</body>
+</html>
