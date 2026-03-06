@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maria's Bakery</title>
-    <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+    <link rel="icon" type="image/png" href="/assets/logo.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -66,11 +66,15 @@
             <p id="carrinho-total">Total: R$ 0,00</p>
         </section>
 
-        <script src="script.js"></script>
-
     </main>
     <footer>
         <p>© 2026 | Vitória Berdtt<span id="carrinho-contador" style="font-size: 1px;">0</span></p>
     </footer>
+
+    <!-- Ordem correta dos scripts (depois do footer, dentro do body)-->
+     <script src="Renderizar/render.js"></script>
+     <script src="API/api.js"></script>
+     <script src="Logica/logic.js"></script>
+
 </body>
 </html>

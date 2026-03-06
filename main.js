@@ -17,6 +17,9 @@ app.get("/", function(req, res){
     res.send("Bem-vindo aos produtos Ímola! Vá para /produtos para ver a lista dos produtinhos");
 });
 
+
+//CRUD - Create, Read, Update, Delete
+
 // Rota para cadastro de produtos (CREATE)
 app.post("/cadastro", function(req, res){
     Produtos.create({
