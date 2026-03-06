@@ -18,7 +18,6 @@ function adicionarAoCarrinho(product) {
             quantidade: 1
         });
     }
-    alert(`Produto "${product.Nome}" adicionado ao carrinho!`);
     atualizarCarrinho();
 }
 
