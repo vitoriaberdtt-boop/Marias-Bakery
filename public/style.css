@@ -9,10 +9,10 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: radial-gradient(circle, #ecd6a8, #f3bb71);
+    background: radial-gradient(circle, #f6e1b5, #b0792b);
 }
 header {
-    background-color: #48250b;
+    background-color: #451e10;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -73,7 +73,7 @@ h5 {
     font-size: 1.25rem;
 }
 #listras {
-    background-image: linear-gradient(rgba(41, 23, 31, 0.648), rgba(27, 18, 22, 0.648)), url('/assets/xadrez.avif');
+    background-image: linear-gradient(rgba(34, 16, 25, 0.697), rgba(27, 18, 22, 0.648)), url('/assets/xadrez.avif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
