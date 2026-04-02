@@ -200,7 +200,8 @@ button {
     background-color: #d8a0b3;
 }
 #imga, #imgb {
-    width: 20%;
+    width: 25%;
+    min-width: 25%;
     height: auto;
     border-radius: 0.5rem;
     margin: 2rem;
@@ -267,7 +268,8 @@ button {
     }
 
     #imga, #imgb {
-        width: 25%;
+        width: 60%;
+        min-width: 55%;
     }
 
     #listras {
@@ -336,7 +338,8 @@ button {
     }
 
     #imga, #imgb {
-        width: 70%;
+        width: 60%;
+        min-width: 60%;
         margin: 0.5rem auto;
     }
 
@@ -371,7 +374,7 @@ button {
         padding: 1.3rem 1.2rem;
     }
     #imga, #imgb {
-        width: 55%;
+        width: 70%;
     }
 
     #listras {
