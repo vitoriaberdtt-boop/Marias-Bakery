@@ -12,7 +12,12 @@ const sequelize = new Sequelize (
         dialect: "mysql", //tipo do banco de dados
         dialectModule: mysql2, //módulo do MySQL para o Sequelize
         logging: false, //desativa os logs de SQL no console
-        pool: {max : 5, min: 0, acquire: 30000, idle: 10000} //configurações simultâneas de conexão
+        pool: {max : 5, min: 0, acquire: 30000, idle: 10000}, //configurações simultâneas de conexão
+        dialectOptions: {
+            ssl: {
+                rejectUnauthorized: false  // necessário para o Aiven
+            }
+        },
     }
 );
 
