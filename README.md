@@ -5,7 +5,7 @@
 - Utilizei MySQL como banco de dados relacional para cadastrar os produtos
 - Hospedei o site usando a Railway e você pode acessar por este link:
 
-https://marias-bakery-production.up.railway.app/
+https://marias-bakery.onrender.com/
 
 ## Sobre o site 🩷
 
