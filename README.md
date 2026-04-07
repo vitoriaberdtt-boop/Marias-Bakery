@@ -3,7 +3,7 @@
 - Aplicação Web full-stack desenvolvida em JavaScript
 - Front-end integrado a uma API REST construída com Node.js, Nodemon.js e Express.js
 - Utilizei MySQL como banco de dados relacional para cadastrar os produtos
-- Hospedei o site usando a Railway e você pode acessar por este link:
+- Usei Aiven para o banco de dados e hospedei o site usando a Render. Você pode acessar por este link:
 
 https://marias-bakery.onrender.com/
 
