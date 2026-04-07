@@ -5,19 +5,31 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.hamburger {
+    display: none;
+}
+
+#carrinho {
+    display: none;
+}
 body{
+    margin: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: radial-gradient(circle, #f6e1b5, #b0792b);
+    background-color: #eac578;
 }
 header {
     background-color: #451e10;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 20px;
     text-align: center;
+}
+.header-placeholder {
+    flex: 1;
 }
 main {
     flex: 1;
@@ -41,6 +53,7 @@ legend {
     padding: 0 10px;
 }
 h1 {
+    flex: 1;
     text-align: center;
     font-size: 4rem;
     font-family: 'Farsan', cursive;
@@ -73,7 +86,7 @@ h5 {
     font-size: 1.25rem;
 }
 #listras {
-    background-image: linear-gradient(rgba(34, 16, 25, 0.697), rgba(27, 18, 22, 0.648)), url('/assets/xadrez.avif');
+    background-image: linear-gradient(rgba(34, 16, 25, 0.697), rgba(34, 16, 25, 0.697)), url('/assets/xadrez.avif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -108,7 +121,7 @@ input[type="text"] {
     left: 1rem; 
     color: #ccc;
 }
-button {
+button, .btn {
     display: block;
     margin: 0 auto;
     margin-top: 2rem;
@@ -119,10 +132,15 @@ button {
     background-color: #48250b;
     color: #fff;
     cursor: pointer;
+    text-decoration: none;
+}
+.btn {
+    display: inline-block;
+    font-family: 'Mulish', sans-serif;
 }
 #carrinho {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     vertical-align: middle;
 }
 .header-placeholder {
@@ -143,10 +161,29 @@ button {
     gap: 1.5rem; 
     transition: right 0.3s ease; 
     z-index: 999;
+    display: none; 
+}
+.hamburger {
+    display: none; 
 }
 
-#nav-menu.open {
-    right: 0; 
+.nav-desktop {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-desktop a {
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: 'Mulish', sans-serif;
+    text-decoration: none;
+    border-radius: 0.4rem;
+    transition: background 0.2s;
+    border: solid 0.2rem #6d350e43;
+    padding: 0.5rem 1rem;
+    background-color: #793f1543;
 }
 #nav-menu a {
     color: #fff;
@@ -159,6 +196,10 @@ button {
     transition: background 0.2s;
 }
 
+#nav-menu.open {
+    right: 0;
+    display: flex; /* mostra quando aberto */
+}
 #nav-menu a:hover {
     background: rgba(255, 255, 255, 0.2);
 }
@@ -173,7 +214,7 @@ button {
     width: auto; 
 }
 .hamburger {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 5px;
     background: none;
@@ -190,14 +231,66 @@ button {
     background-color: #bbb9b2;
     border-radius: 3px;
 }
-#sobre, #ocarrinho {
+#sobre, #contato, #compra {
     background-color: #703a24;
     width: 100%;
     padding: 4rem 2rem;
     box-shadow: inset 0 0 2rem rgba(40, 16, 16, 0.681);
 }
-#ocarrinho {
-    background-color: #d8a0b3;
+#compra {
+    min-height: 100vh;
+}
+#ocarrinho{
+    width: 100%;
+    text-align: center;
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    background-image: linear-gradient(rgba(34, 16, 25, 0.697), rgba(34, 16, 25, 0.697)), url('/assets/xadrez.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#compra-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+#compra-form label {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 600;
+    color: #48250b;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+#compra-form input,
+#compra-form select {
+    padding: 0.5rem;
+    border: 2px solid #d4a574;
+    border-radius: 0.6rem;
+    font-family: 'Mulish', sans-serif;
+    font-size: 0.95rem;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+#contato {
+    background-color: #eac578;
+}
+.con {
+    color: #5f0b0b;
+    font-size: 1.5rem;
+    font-family: 'Mulish', sans-serif;
+    text-align: center;
+    margin-top: 2rem;
 }
 #imga, #imgb {
     width: 25%;
@@ -220,7 +313,7 @@ button {
     text-align: center;
     font-size: 2rem;
     font-family: 'Mulish', sans-serif;
-    color: #5f0b0b;
+    color: #e8e8e8;
     margin-bottom: 2rem;
 }
 #carrinho-lista {
@@ -235,14 +328,14 @@ button {
     text-align: center;
     font-size: 1.5rem;
     font-family: 'Mulish', sans-serif;
-    color: #5f0b0b;
+    color: #e8e8e8;
     margin-top: 2rem;
 }
 #carrinho-msg {
     text-align: center;
     font-size: 1.5rem;
     font-family: 'Mulish', sans-serif;
-    color: #5f0b0b;
+    color: #e8e8e8;
     margin-top: 2rem;
 }
 #carrito {
@@ -280,9 +373,25 @@ button {
         margin-bottom: 6rem;
         padding: 2rem;
     }
+    .hamburguer {
+        display: none; /* aparece no mobile */
+    }
 }
 
 @media (max-width: 768px) {
+
+.hamburger {
+    display: flex; /* aparece no mobile */
+}
+
+.nav-desktop {
+    display: none; /* some no mobile */
+}
+
+
+    #carrinho {
+        display: block;
+    }
     h1 {
         font-size: 2.2rem;
     }

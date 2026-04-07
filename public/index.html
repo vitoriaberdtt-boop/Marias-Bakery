@@ -11,8 +11,16 @@
   <header>
     <div class="header-placeholder"></div>
     <h1>💗 Maria's Bakery 💗</h1>
+
+    <nav class="nav-desktop">
+        <a href="#listras">Produtos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="ocarrinho.html">Carrinho</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
     <div class="header-right">
-        <a href="#ocarrinho">
+        <a href="ocarrinho.html">
             <img src="/assets/carrinho.png" alt="Carrinho de compras" id="carrinho">
         </a>
         <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -26,7 +34,8 @@
 <nav id="nav-menu">
     <a href="#listras">Produtos</a>
     <a href="#sobre">Sobre</a>
-    <a href="#ocarrinho">Carrinho</a>
+    <a href="ocarrinho.html">Carrinho</a>
+    <a href="#contato">Contato</a>
 </nav>
 
     <section id="listras">
@@ -55,15 +64,25 @@
             </div>
         </section>
 
-        <section id="ocarrinho">
-            <h2 id="h2carrinho">💗 Carrinho 💗</h2>
+        <section id="contato">
 
-            <fieldset id="carrito" style="display: none;">                
-                <div id="carrinho-lista"></div>
-            </fieldset>
+            <style>
+                #contato {
+                    a {
+                        color: #5f0b0b;
+                    }
+                }   
+            </style>
 
-            <h3 id="carrinho-msg">Você não tem itens no carrinho.</h3>
-            <p id="carrinho-total">Total: R$ 0,00</p>
+            <h2 class="con">💗 Contato 💗</h2>
+
+            <a href="https://wa.me/5551992427269" target="_blank">
+            <p class="con">📞 Telefone: +55 (51) 99242-7269</p>
+            </a>
+
+            <a href="mailto:mariasbakery@gmail.com">
+            <p class="con">📧 Email:mariasbakery@gmail.com</p>
+            </a>
         </section>
 
     </main>

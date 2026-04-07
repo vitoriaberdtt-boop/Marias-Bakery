@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria's Bakery - carrinho</title>
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <section id="ocarrinho">
+            <h2 id="h2carrinho">💗 Carrinho 💗</h2>
+
+            <fieldset id="carrito" style="display: none;">                
+                <div id="carrinho-lista"></div>
+            </fieldset>
+
+            <h3 id="carrinho-msg">Você não tem itens no carrinho.</h3>
+            <p id="carrinho-total">Total: R$ 0,00</p>
+
+         <a href="#compra" class="btn">Finalizar Compra</a>
+
+        </section>
+
+        <section id="compra" style="display: none;">
+            <h2>💗 Finalizar Compra 💗</h2>
+            <form id="compra-form">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="endereco">Endereço de Entrega:</label>
+                <input type="text" id="endereco" name="endereco" required>
+
+                <label for="pagamento">Método de Pagamento:</label>
+                <select id="pagamento" name="pagamento" required>
+                    <option value="">Selecione</option>
+                    <option value="cartao">Cartão de Crédito</option>
+                    <option value="boleto">Boleto Bancário</option>
+                    <option value="pix">PIX</option>
+                </select>
+
+                <button type="submit">Confirmar Compra</button>
+            </form>
+
+        </section>
+    </main>
+
+    <script src="Logica/carrinho.js"></script>
+</body>
+</html>

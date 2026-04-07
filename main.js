@@ -1,8 +1,10 @@
+require("dotenv").config();
 const express = require('express');
 const app = express();
 const port = 2000;
 const Produtos = require("./models/Produtos");
 const bodyParser = require('body-parser');
+const session = require('express-session');
 
 // Configurar Body Parser 
 app.use(bodyParser.urlencoded({ extended: false })); //URL condificada 
@@ -12,11 +14,74 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 app.use('/assets', express.static('public/assets')); // Rota para acessar imagens na pasta assets
 
-// Rota inicial
-app.get("/", function(req, res){
-    res.send("Bem-vindo aos produtos Ímola! Vá para /produtos para ver a lista dos produtinhos");
+app.use(session({
+  secret: "segredo-super",
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    secure: false // true só com HTTPS
+  }
+}));
+
+// Adicionar item ao carrinho
+app.post("/carrinho/adicionar", function(req, res) {
+    if (!req.session.carrinho) {
+        req.session.carrinho = []; // inicializa se não existir
+    }
+
+    const { id, nome, preco, imagem } = req.body;
+    const itemExistente = req.session.carrinho.find(item => item.id === id);
+
+    if (itemExistente) {
+        itemExistente.quantidade += 1;
+    } else {
+        req.session.carrinho.push({ id, nome, preco, imagem, quantidade: 1 });
+    }
+
+    res.json({ sucesso: true, carrinho: req.session.carrinho });
 });
 
+// Atualizar quantidade do item no carrinho
+app.put("/carrinho/atualizar", function(req, res) {
+    const { id, quantidade } = req.body;
+
+    if (!req.session.carrinho) {
+        return res.json({ sucesso: false });
+    }
+
+    const item = req.session.carrinho.find(item => item.id == id);
+
+    if (item) {
+        item.quantidade = quantidade;
+    }
+
+    res.json({ sucesso: true, carrinho: req.session.carrinho });
+});
+
+// Buscar itens do carrinho
+app.get("/carrinho", function(req, res) {
+    res.json({ carrinho: req.session.carrinho || [] });
+});
+
+// Remover item do carrinho
+app.delete("/carrinho/remover/:id", function(req, res) {
+    if (!req.session.carrinho) return res.json({ sucesso: false });
+
+    req.session.carrinho = req.session.carrinho.filter(
+        item => item.id != req.params.id
+    );
+
+    res.json({ sucesso: true, carrinho: req.session.carrinho });
+});
+
+// Rota inicial
+app.get("/", function(req, res){
+    res.sendFile(__dirname + "/public/index.html");
+});
+
+app.get("/ocarrinho", function(req, res){
+    res.sendFile(__dirname + "/public/ocarrinho.html");
+});
 
 //CRUD - Create, Read, Update, Delete
 
@@ -83,6 +148,7 @@ app.delete("/deletar/:id", function(req, res){
         res.send("Erro ao deletar produto: " + erro)
     });
 });
+
 
 const PORT = process.env.PORT || 2000;
 
