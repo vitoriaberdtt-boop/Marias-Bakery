@@ -55,7 +55,7 @@ legend {
 h1 {
     flex: 1;
     text-align: center;
-    font-size: 4rem;
+    font-size: 5rem;
     font-family: 'Farsan', cursive;
     color: #ffffff;
 }
@@ -251,6 +251,7 @@ button, .btn {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
 #compra-form {
     display: flex;
     flex-direction: column;
@@ -341,7 +342,22 @@ button, .btn {
 #carrito {
     margin: 7rem;
 }
+
+@media (min-width: 1024px) {
+    #logocake {
+        width: 5rem;
+        height: auto;
+        margin-bottom: 1rem;
+        margin-right: 0.8rem;
+        margin-left: 6rem;
+    }
+}
+
 @media (max-width: 1024px) {
+    #logocake {
+        width: 5rem;
+        height: auto;
+    }
     h1 {
         font-size: 3rem;
     }
@@ -388,7 +404,10 @@ button, .btn {
     display: none; /* some no mobile */
 }
 
-
+    #logocake {
+        width: 2rem;
+        height: auto;
+    }
     #carrinho {
         display: block;
     }
@@ -472,6 +491,12 @@ button, .btn {
 }
 
 @media (max-width: 480px) {
+
+    #logocake {
+        width: 2.2rem;
+        height: auto;
+        margin-bottom: 5px;
+    }
     h1 {
         font-size: 2rem;
     }
